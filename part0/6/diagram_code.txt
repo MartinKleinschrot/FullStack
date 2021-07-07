@@ -1,0 +1,11 @@
+note over browser:
+browser starts executing js-code
+that creates a node on the browser and sends the node to the server
+end note
+
+browser->server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note_spa
+
+note over server:
+server starts executing js-code
+that adds the node from the trasmitted data from the browser
+end note
