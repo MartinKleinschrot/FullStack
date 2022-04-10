@@ -1,0 +1,34 @@
+{
+  "persons": [
+    {
+      "name": "Ada Lovelace",
+      "number": "39-44-5323523",
+      "id": 2
+    },
+    {
+      "name": "Dan Abramov",
+      "number": "12-43-234345",
+      "id": 3
+    },
+    {
+      "name": "Mary Poppendieck",
+      "number": "39-23-6423122",
+      "id": 4
+    },
+    {
+      "name": "Martin Klein",
+      "number": "61984899",
+      "id": 6
+    },
+    {
+      "name": "Martin Kleinschrot",
+      "number": "+491156198198",
+      "id": 7
+    },
+    {
+      "name": "Laura Vahtera",
+      "number": "+3581556189189",
+      "id": 8
+    }
+  ]
+}
