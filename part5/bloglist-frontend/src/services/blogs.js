@@ -26,5 +26,13 @@ const update = (id, newObject) => {
   return request.then(response => response.data)
 }
 
-// eslint-disable-next-line import/no-anonymous-default-export
-export default { getAll, create, update, setToken }
+const deleteBlog = (id) => {
+  const config = {
+    headers: { Authorization: token },
+  }
+
+  const request = axios.delete(`${ baseUrl }/${id}`, config)
+  return request.then(response => response.data)
+}
+
+export default { getAll, create, update, setToken, deleteBlog }
