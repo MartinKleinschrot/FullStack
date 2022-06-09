@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Routes, Route, Link, useParams, useNavigate, useMatch } from 'react-router-dom'
+import { useField } from './hooks'
 
 const Menu = () => {
   const padding = {
@@ -46,9 +47,9 @@ const Footer = () => (
 )
 
 const CreateNew = (props) => {
-  const [content, setContent] = useState('')
-  const [author, setAuthor] = useState('')
-  const [info, setInfo] = useState('')
+  const content = useField('text')
+  const author = useField('text')
+  const info = useField('text')
   const navigate = useNavigate()
 
   const handleSubmit = (e) => {
@@ -62,27 +63,35 @@ const CreateNew = (props) => {
     navigate('/')
   }
 
+  const reset = (e) => {
+    e.preventDefault()
+    content.onChange()
+    author.onChange()
+    info.onChange()
+  }
+
+
   return (
     <div>
       <h2>create a new anecdote</h2>
       <form onSubmit={handleSubmit}>
         <div>
           content
-          <input name='content' value={content} onChange={(e) => setContent(e.target.value)} />
+          <input {...content} id="content"/>
         </div>
         <div>
           author
-          <input name='author' value={author} onChange={(e) => setAuthor(e.target.value)} />
+          <input {...author} id="author"/>
         </div>
         <div>
           url for more info
-          <input name='info' value={info} onChange={(e)=> setInfo(e.target.value)} />
+          <input {...info} id="info"/>
         </div>
         <button>create</button>
+        <button onClick={reset}>reset</button>
       </form>
     </div>
   )
-
 }
 
 const Anecdote = ({ anecdote }) => {
@@ -132,13 +141,17 @@ const App = () => {
       id: 2
     }
   ])
-
   const [notification, setNotification] = useState('')
 
   const addNew = (anecdote) => {
-    anecdote.id = Math.round(Math.random() * 10000)
-    setAnecdotes(anecdotes.concat(anecdote))
-    setNotification(`a new aneccdote ${anecdote.content} created!`)
+    const newAnecdote = {
+      content: anecdote.content.value,
+      author: anecdote.author.value,
+      info: anecdote.info.value
+    }
+    newAnecdote.id = Math.round(Math.random() * 10000)
+    setAnecdotes(anecdotes.concat(newAnecdote))
+    setNotification(`a new aneccdote ${newAnecdote.content} created!`)
     setTimeout(() => {
       setNotification('')
     }, 5000)
