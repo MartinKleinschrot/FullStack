@@ -6,12 +6,11 @@ const schema = new mongoose.Schema({
     required: true,
     minlength: 3
   },
-  friends: [
-    {
-      type: mongoose.Schema.Types.ObjectId,
-      ref: 'Person'
-    }
-  ],
+  favouriteGenre: {
+    type: String,
+    required: true,
+    minlength: 3
+  },
 })
 
 module.exports = mongoose.model('User', schema)

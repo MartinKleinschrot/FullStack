@@ -48,6 +48,7 @@
     npm install @reduxjs/toolkit
     npm install redux-thunk
     npm install react-router-dom
+    npm install @apollo/client subscriptions-transport-ws
 #### Edit file package.json
     "scripts": {
       "start": "react-scripts start",
@@ -82,6 +83,8 @@
     npm install express-async-errors
     npm install bcrypt
     npm install jsonwebtoken
+    npm install apollo-server-express apollo-server-core express @graphql-tools/schema
+    npm install subscriptions-transport-ws graphql-subscriptions
 #### Edit file package.json
     "scripts": {
       "start": "NODE_ENV=production node index.js",
