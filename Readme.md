@@ -177,3 +177,51 @@
     npx json-server --port 3001 --watch db.json --routes routes.json
 
 ***
+
+## TypeScript
+### Setup:
+    npm install -g ts-node typescript
+    npm install --save-dev ts-node typescript
+    npm install --save-dev @types/node
+    npm install express
+    npm install --save-dev @types/express
+    npm install --save-dev ts-node-dev
+    npm install --save-dev eslint @typescript-eslint/eslint-plugin @typescript-eslint/parser
+#### Edit file package.json
+  "scripts": {
+    "ts-node": "ts-node",
+    "multiply": "ts-node multiplier.ts",
+    "calculate": "ts-node calculator.ts",
+    "start": "ts-node index.ts",
+    "dev": "ts-node-dev index.ts",
+    "lint": "eslint --ext .ts ."
+    },
+#### Create .eslintrc.js 
+   {
+      "extends": [
+        "eslint:recommended",
+        "plugin:@typescript-eslint/recommended",
+        "plugin:@typescript-eslint/recommended-requiring-type-checking"
+      ],
+      "plugins": ["@typescript-eslint"],
+      "env": {
+        "node": true,
+        "es6": true
+      },
+      "rules": {
+        "@typescript-eslint/semi": ["error"],
+        "@typescript-eslint/explicit-function-return-type": "off",
+        "@typescript-eslint/explicit-module-boundary-types": "off",
+        "@typescript-eslint/restrict-template-expressions": "off",
+        "@typescript-eslint/restrict-plus-operands": "off",
+        "@typescript-eslint/no-unused-vars": [
+          "error",
+          { "argsIgnorePattern": "^_" }
+        ],
+        "no-case-declarations": "off"
+      },
+      "parser": "@typescript-eslint/parser",
+      "parserOptions": {
+        "project": "./tsconfig.json"
+      }
+    }
