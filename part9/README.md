@@ -1,4 +1,4 @@
-# Title: Part 9
+# Part 9
 
 ## my-app 
 Renders a list of courses via a component structured UI
