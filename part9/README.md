@@ -1,10 +1,10 @@
-# Part 9
+# Part 9 - TypeScript
 
-## my-app 
+## 1. my-app 
 Renders a list of courses via a component structured UI
 
-## patient-diaggnosis-app
+## 2. patient-diaggnosis-app
 Front & backend to show, add and delete patients and their diagnoses
 
-## project1
+## 3. project1
 BMI calculator & Weekly Exercises checker without UI

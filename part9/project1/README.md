@@ -1,4 +1,4 @@
-# Title: Fitness calculator
+# Fitness calculator
 
 ## What does it do: 
 It calculates the BMI and number of exercises a week against a set goal

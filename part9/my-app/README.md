@@ -1,4 +1,4 @@
-# Title: Half Stack application development - app using TypeScript
+# Half Stack application development - app using TypeScript
 
 ## What does it do: 
 It renders a list of courses which are defined in App.tsx via a component structure

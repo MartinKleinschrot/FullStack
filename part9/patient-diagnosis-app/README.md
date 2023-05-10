@@ -1,4 +1,4 @@
-# Title: Patient Diagnosis App using TypeScript
+# Patient Diagnosis App using TypeScript
 
 ## What does it do: 
 It renders a list of patients and their diagnoses which are defined in the backend ./Data/ 
